@@ -1,0 +1,73 @@
+@import '../../Styles/Colors'
+    
+.sidebar
+    z-index: 2
+    position: fixed
+    top: 0
+    left: 0
+    width: 260px
+    height: 100vh
+    background: #fff
+    box-shadow: 0 0 38px rgba(0,0,0,.25)
+    border-radius: 0 35px 35px 0
+    display: flex
+    flex-direction: column
+    padding: 10px 0px 20px
+
+.sidebarLink
+    display: flex
+    align-items: center
+    box-sizing: border-box
+    height: 45px
+    padding: 15px 20px 15px 52px
+    padding-left: 51px
+    color: black
+    text-align: center
+    font-weight: 500
+
+    &:hover 
+        background: $lightGreen
+
+.sidebarLinkActive
+    background: lightGreen
+    &:hover
+        background: lightGreen
+
+.sidebarAvatar
+    display: flex
+    > img
+        margin: 0 auto
+        max-width: 50%    
+        object-fit: cover
+        border-radius: 50%  
+        margin-bottom: 30px
+
+.toggleSidebar
+    display: none
+    position: fixed
+    top: 10px
+    left: 10px
+    flex-direction: column
+    > span
+        display: block
+        height: 5px
+        width: 25px
+        background: green
+        &:not(:last-child)
+            margin-bottom: 5px
+
+    
+@media screen and(max-width: 768px)
+    .sidebar
+        width: 0px
+        overflow: hidden
+        border-radius: 0px
+        box-shadow: none
+        transition: width ease-in-out .4s
+
+    .sidebarOpen
+        width: 100vw
+
+    .toggleSidebar
+        display: flex
+

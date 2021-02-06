@@ -1,0 +1,18 @@
+@mixin btnMixin($background, $color, $border, $border-radius, $padding)
+    background: $background
+    color: $color
+    border: $border
+    border-radius: $border-radius
+    padding: $padding
+
+.button
+    border: none
+    cursor: pointer
+    background: inherit
+    border-radius: 5px
+
+.buttonLogin
+    @include btnMixin(inherit, green, 1px solid green, 5px, 10px 20px)
+
+    &:hover
+        @include btnMixin(green, white, 1px solid green, 5px, 10px 20px)
