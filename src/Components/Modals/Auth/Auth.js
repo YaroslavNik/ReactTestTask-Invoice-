@@ -4,15 +4,12 @@ import CustomInput from '../../../Common/CustomInput/CustomInput';
 import ButtonLogin from '../../../Common/CustomButtons/ButtonLogin';
 import { appAPI } from '../../../API/API';
 import { validatePassword } from './Validations';
-import {useHistory} from 'react-router'
 
 const Auth = () => {
 
     const [login, setLogin] = useState('')
     const [password, setPassword] = useState('')
     
-    const history = useHistory()
-
     const submitHandler = async e => {
         e.preventDefault()
         if(login && password) {
