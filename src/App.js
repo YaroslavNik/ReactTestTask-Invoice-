@@ -3,6 +3,7 @@ import './Styles/App.sass'
 import Auth from './Components/Modals/Auth/Auth';
 import { useState, useEffect } from 'react';
 import Sidebar from './Components/Sidebar/Sidebar';
+import Terminals from './Pages/Terminals/Terminals';
 
 const App = () => {
 
@@ -22,12 +23,15 @@ const App = () => {
             ? 
               <>
                 <Route path = '/' component = {Sidebar}/>
-                <Route exact path = '/terminals'/>
-                <Route exact path = '/buyers '/>
-                <Route exact path = '/buyers:/id'/>
-                <Route path = '/*'>
-                  <Redirect to = '/terminals'/>
-                </Route>
+                
+                <div className="container-content">
+                  <Route exact path = '/terminals' component = {Terminals}/>
+                  <Route exact path = '/buyers '/>
+                  <Route exact path = '/buyers:/id'/>
+                  <Route path = '/*'>
+                    <Redirect to = '/terminals'/>
+                  </Route>
+                </div>
               </>
 
             : 
